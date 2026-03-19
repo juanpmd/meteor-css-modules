@@ -13,6 +13,13 @@ import { TsCheckerRspackPlugin } from "ts-checker-rspack-plugin";
  */
 export default defineConfig((/* Meteor */) => {
   return {
+    module: {
+      parser: {
+        'css/auto': {
+          namedExports: false,
+        },
+      },
+    },
     plugins: [new TsCheckerRspackPlugin()],
   };
 });
